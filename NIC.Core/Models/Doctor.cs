@@ -16,6 +16,7 @@ namespace NIC.Core.Models
       Station = shell.Station;
     }
 
+    public Guid Id { get; }
     public FullName FullName { get; }
     public Cabinet Cabinet { get; }
     public Specialization Specialization { get; }
