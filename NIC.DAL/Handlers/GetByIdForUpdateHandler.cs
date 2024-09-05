@@ -8,7 +8,7 @@ using NIC.Application.Queries;
 
 namespace NIC.DAL.Handlers
 {
-  public class GetByIdForUpdateHandler : ICommandHandler<Task<Result<GetByIdForUpdateResult>>, GetByIdForUpdateCommand>
+  public class GetByIdForUpdateHandler : IQueryHandler<Task<Result<GetByIdForUpdateResult>>, GetByIdForUpdateCommand>
   {
     private readonly NicWebApiContext _context;
 

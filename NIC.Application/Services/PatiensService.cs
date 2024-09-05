@@ -12,17 +12,22 @@ namespace NIC.Application.Services
   {
     private readonly ICommandHandler<Task<Result<AddPatientResult>>, AddPatientCommand> _addCommandHandler;
     private readonly ICommandHandler<Task<Result<DeletePatientResult>>, DeletePatientCommand> _deleteCommandHandler;
-    private readonly ICommandHandler<Task<Result<GetByIdForUpdateResult>>, GetByIdForUpdateCommand> _getByIdCommandHandler;
+    private readonly ICommandHandler<Task<Result<UpdateByIdResult>>, UpdateByIdCommand> _updateCommandHandler;
+
+    private readonly IQueryHandler<Task<Result<GetByIdForUpdateResult>>, GetByIdForUpdateCommand> _getByIdQueryHandler;
 
     public PatiensService(
       ICommandHandler<Task<Result<AddPatientResult>>, AddPatientCommand> addCommandHandler,
       ICommandHandler<Task<Result<DeletePatientResult>>, DeletePatientCommand> deleteCommandHandler,
-      ICommandHandler<Task<Result<GetByIdForUpdateResult>>, GetByIdForUpdateCommand> getByIdCommandHandler
+      ICommandHandler<Task<Result<UpdateByIdResult>>, UpdateByIdCommand> updateCommandHandler,
+      IQueryHandler<Task<Result<GetByIdForUpdateResult>>, GetByIdForUpdateCommand> getByIdQueryHandler
       )
     {
       _addCommandHandler = addCommandHandler;
       _deleteCommandHandler = deleteCommandHandler;
-      _getByIdCommandHandler = getByIdCommandHandler;
+      _updateCommandHandler = updateCommandHandler;
+
+      _getByIdQueryHandler = getByIdQueryHandler;
     }
 
     public async Task<Result<AddPatientResult>> CreatePatient(AddPatientCommand command)
@@ -37,7 +42,12 @@ namespace NIC.Application.Services
 
     public async Task<Result<GetByIdForUpdateResult>> GetByIdForUpdate(GetByIdForUpdateCommand command)
     {
-      return await _getByIdCommandHandler.Handle(command);
+      return await _getByIdQueryHandler.Handle(command);
+    }
+
+    public async Task<Result<UpdateByIdResult>> UpdateById(UpdateByIdCommand command)
+    {
+      return await _updateCommandHandler.Handle(command);
     }
   }
 }

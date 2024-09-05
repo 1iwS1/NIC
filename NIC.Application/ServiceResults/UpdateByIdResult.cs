@@ -1,6 +1,6 @@
 ﻿namespace NIC.Application.ServiceResults
 {
-  public record GetByIdForUpdateResult(
+  public record UpdateByIdResult(
     Guid Result
     );
 }
