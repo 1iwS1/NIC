@@ -11,6 +11,7 @@ namespace NIC.Core.Models
   {
     private Patient(PatientShell shell)
     {
+      Id = shell.Id;
       FullName = shell.FullName;
       Address = shell.Address;
       Birthday = shell.Birthday;
