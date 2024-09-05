@@ -1,4 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
+using System.Xml.Linq;
 
 
 namespace NIC.Core.ValueObjects
@@ -19,9 +20,9 @@ namespace NIC.Core.ValueObjects
 
     public static Result<FullName> Create(string surname, string name, string patronymic)
     {
-      var totalLenght = surname.Length + name.Length + patronymic.Length;
+      var totalStr = surname + name + patronymic;
 
-      if (totalLenght > MAX_FULLNAME_LENGHT)
+      if (totalStr.Length > MAX_FULLNAME_LENGHT)
       {
         return Result.Failure<FullName>($"'{nameof(FullName)}' must be less than {MAX_FULLNAME_LENGHT}");
       }

@@ -11,16 +11,16 @@ namespace NIC.Core.Models
     private Doctor(DoctorShell shell)
     {
       FullName = shell.FullName;
-      Cabinet = shell.Cabinet;
-      Specialization = shell.Specialization;
-      Station = shell.Station;
+      Cabinet = shell.CabinetId;
+      Specialization = shell.SpecializationId;
+      Station = shell.StationId;
     }
 
     public Guid Id { get; }
     public FullName FullName { get; }
-    public Cabinet Cabinet { get; }
-    public Specialization Specialization { get; }
-    public Station? Station { get; }
+    public Guid Cabinet { get; }
+    public Guid Specialization { get; }
+    public Guid? Station { get; }
 
     public static Result<Doctor> Create(DoctorShell shell)
     {

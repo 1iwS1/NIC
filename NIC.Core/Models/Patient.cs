@@ -15,7 +15,7 @@ namespace NIC.Core.Models
       Address = shell.Address;
       Birthday = shell.Birthday;
       Sex = shell.Sex;
-      Station = shell.Station;
+      StationId = shell.StationId;
     }
 
     public Guid Id { get; }
@@ -23,7 +23,7 @@ namespace NIC.Core.Models
     public string Address { get; }
     public DateTime Birthday { get; }
     public PersonSex Sex { get; }
-    public Station Station { get; }
+    public Guid StationId { get; }
 
     public static Result<Patient> Create(PatientShell shell)
     {

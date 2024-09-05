@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIC.Core", "NIC.Core\NIC.Core.csproj", "{4D8E7046-8561-4A36-8A48-5560A606F95B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIC.Core", "NIC.Core\NIC.Core.csproj", "{4D8E7046-8561-4A36-8A48-5560A606F95B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIC.Application", "NIC.Application\NIC.Application.csproj", "{D5D8426D-3A78-4C1A-90E8-A7B081B70600}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIC.Application", "NIC.Application\NIC.Application.csproj", "{D5D8426D-3A78-4C1A-90E8-A7B081B70600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIC.DAL", "NIC.DAL\NIC.DAL.csproj", "{1998351F-3150-4BF8-AF43-E3D3AB425682}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D5D8426D-3A78-4C1A-90E8-A7B081B70600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5D8426D-3A78-4C1A-90E8-A7B081B70600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5D8426D-3A78-4C1A-90E8-A7B081B70600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1998351F-3150-4BF8-AF43-E3D3AB425682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1998351F-3150-4BF8-AF43-E3D3AB425682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1998351F-3150-4BF8-AF43-E3D3AB425682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1998351F-3150-4BF8-AF43-E3D3AB425682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
