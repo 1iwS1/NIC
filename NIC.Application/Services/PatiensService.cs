@@ -32,7 +32,20 @@ namespace NIC.Application.Services
 
     public async Task<Result<AddPatientResult>> CreatePatient(AddPatientCommand command)
     {
-      return await _addCommandHandler.Handle(command);
+      try
+      {
+        var result = await _addCommandHandler.Handle(command);
+
+        if (result.IsFailure)
+          throw new ApplicationException("something wrong when doing query to database");
+
+        return result;
+      }
+
+      catch (Exception ex)
+      {
+        return Result.Failure<AddPatientResult>(ex.Message);
+      }
     }
 
     public async Task<Result<DeletePatientResult>> DeletePatient(DeletePatientCommand command)
