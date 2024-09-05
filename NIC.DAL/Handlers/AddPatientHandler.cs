@@ -30,7 +30,7 @@ namespace NIC.DAL.Handlers
         StationId = command.Patient.StationId
       };
 
-      await _context.AddAsync(PatientBase);
+      await _context.Patients.AddAsync(PatientBase);
       await _context.SaveChangesAsync();
 
       AddPatientResult result = new(command.Patient.Id);
